@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/InstrukcjeWarunkowe/InstrukcjeWarunkowe.iml" filepath="$PROJECT_DIR$/InstrukcjeWarunkowe/InstrukcjeWarunkowe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Iteracje/Iteracje.iml" filepath="$PROJECT_DIR$/Iteracje/Iteracje.iml" />
       <module fileurl="file://$PROJECT_DIR$/OperacjeWeWyj/OperacjeWeWyj.iml" filepath="$PROJECT_DIR$/OperacjeWeWyj/OperacjeWeWyj.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ZadaniaEBook.iml" filepath="$PROJECT_DIR$/.idea/ZadaniaEBook.iml" />
     </modules>
