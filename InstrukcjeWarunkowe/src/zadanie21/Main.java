@@ -1,14 +1,18 @@
 package zadanie21; // zadanie 2.1
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
- *Napisz program, który sprawdza dla trzech boków trójkąta a,
+ * Napisz program, który sprawdza dla trzech boków trójkąta a,
  * b i c wprowadzonych z klawiatury, czy tworzą one trójkąt prostokątny
  * (zakładamy, że a > 0, b > 0, c > 0).
  */
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 /**
  * W Javie istnieją dwie instrukcje warunkowe:
  * 􀁔 instrukcja warunkowa if ... else,
@@ -41,8 +45,35 @@ public class Main {
  * default : instrukcje;
  * }
  * Instrukcja break przerywa wykonywanie całego bloku case.
-  */
+ */
 
+        int a, b, c;
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Podaj bok a.");
+        a = Integer.parseInt(br.readLine());
+        System.out.println("Podaj bok b.");
+        b = Integer.parseInt(br.readLine());
+        System.out.println("Podaj bok c.");
+        c = Integer.parseInt(br.readLine());
+
+/**
+ * Sprawdzenie twierdzenia Pitagorasa dla wczytanych boków a, b i c.
+ */
+        if ((a * a + b * b) == c * c) {
+
+            System.out.println("Boki");
+            System.out.println("a = " + a);
+            System.out.println("b = " + b);
+            System.out.println("c = " + c);
+            System.out.println("tworzą trójkąt prostokątny.");
+        } else {
+            System.out.println("Boki");
+            System.out.println("a = " + a);
+            System.out.println("b = " + b);
+            System.out.println("c = " + c);
+            System.out.println("nie tworzą trójkąta prostokątnrgo.");
+        }
     }
 }
