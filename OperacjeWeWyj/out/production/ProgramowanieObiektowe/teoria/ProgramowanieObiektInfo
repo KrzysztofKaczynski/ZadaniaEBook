@@ -1,0 +1,149 @@
+Java jest obiektowym językiem programowania. Programowanie obiektowe
+(ang. object-oriented programming) to taki paradygmat programowania,
+w którym programy definiuje się za pomocą obiektów —
+elementów łączących stan (są to dane nazywane polami) i zachowanie
+(są to metody — w Javie są nimi funkcje służące do wykonywania
+na tych danych określonych zadań). Obiektowy program komputerowy
+to zbiór takich obiektów komunikujących się pomiędzy sobą w celu
+wykonywania zadań. Każdy program w Javie składa się ze zbioru
+klas. Aby program napisany w tym języku można było uruchomić, musi
+on posiadać publiczną i statyczną metodę main() w postaci:
+
+public static void main(String[] args)
+{
+// instrukcje do wykonania
+}
+
+oraz przynajmniej jedną publiczną klasę:
+
+public class Main
+{
+public static void main(String[] args)
+{
+// instrukcje do wykonania
+}
+}
+
+W języku Java podstawowym pojęciem programowania obiektowego
+jest klasa (ang. class), która definiuje projekt i strukturę obiektu. Schematyczny
+szkielet klasy ma tu następującą postać:
+
+class nazwa_klasy
+{
+// pola
+// metody
+}
+
+W klasach możemy wyróżnić m.in. następujące elementy: stałe, zmienne
+składowe, zmienne statyczne, metody (funkcje) i konstruktory.
+
+Java posiada następujące cztery poziomy dostępu (modyfikatory) do pól
+i metod (składowych klasy): publiczny, prywatny, chroniony i pakietowy.
+
+Jeśli przed składową klasy nie występuje żadne określenie, oznacza to,
+że dostęp jest pakietowy, czyli do tej składowej mają dostęp wszystkie
+klasy pakietu, w którym się ona znajduje.
+
+Jeżeli dana składowa klasy jest publiczna (ang. public), to mają do niej
+dostęp wszystkie inne klasy i nie istnieją żadne ograniczenia w dostępności.
+Dla pól klasy specyfikator dostępu public należy umieścić
+przed nazwą typu według schematu
+
+public nazwa_typu nazwa_pola;
+
+natomiast dla metod ogólny schemat jest następujący:
+
+public typ_zwracany nazwa_metody(argumenty)
+
+Gdy składowa klasy jest prywatna (ang. private), dostęp do niej jest
+możliwy tylko w obrębie tej klasy. Oznacza to, że wszystkie metody
+danej klasy mogą ją dowolnie odczytywać i zapisywać, natomiast nie
+może tego robić żadna inna klasa. Dla pól klasy specyfikator dostępu
+private należy umieścić przed nazwą typu według wzoru
+
+private nazwa_typu nazwa_pola;
+
+natomiast dla metod ogólny schemat jest następujący:
+private typ_zwracany nazwa_metody(argumenty)
+Jeżeli składowa klasy jest chroniona (ang. protected), oznacza to, że
+jest ona dostępna jedynie dla metod danej klasy, klas potomnych oraz
+klas z tego samego pakietu. Dla pól klasy specyfikator dostępu protected
+należy umieścić przed nazwą typu według schematu
+protected nazwa_typu nazwa_pola;
+natomiast dla metod wygląda on następująco:
+protected typ_zwracany nazwa_metody(argumenty)
+Klasy w języku Java pogrupowane są w jednostki zwane pakietami
+(ang. package). Tworzą one rodzaj bibliotek, czyli tematycznie powiązanych
+ze sobą klas. Aby utworzyć pakiet, musimy użyć słowa
+kluczowego package, po którym następuje nazwa pakietu zakończona
+średnikiem, według następującego schematu:
+package nazwa_pakietu;
+Instrukcja ta musi znajdować się na początku pliku.
+package nazwa_pakietu;
+..............................
+class nazwa_klasy
+{
+// pola
+// metody
+}
+Jeżeli w jednej klasie chcemy skorzystać z innej klasy znajdującej się
+w pakiecie, musimy użyć dyrektywy import według wzoru
+import nazwa_pakietu.nazwa_klasy;
+Dyrektywa ta musi znaleźć się na początku pliku. Do zaimportowania
+wszystkich klas z danego pakietu stosujemy natomiast schemat
+import nazwa_pakietu.*;
+Aby utworzyć zmienną typu obiektowego (klasowego, referencyjnego),
+należy skorzystać z następującej konstrukcji:
+nazwa_klasy nazwa_zmiennej;
+Do tak zadeklarowanej zmiennej można następnie przypisać obiekt,
+który tworzymy za pomocą operatora new:
+new nazwa_klasy();
+
+Natomiast konstrukcja
+nazwa_klasy nazwa_zmiennej = new nazwa_klasy();
+pozwala na jednoczesną deklarację zmiennej, utworzenie obiektu
+i przypisanie go do niej.
+Po utworzeniu obiektu do jego pól można odwołać się za pomocą
+operatora . (kropka) według następującego schematu:
+nazwa_obiektu.nazwa_pola;
+Do metod utworzonego obiektu można odwołać się analogicznie jak
+do pól, czyli przy użyciu operatora . (kropka), zgodnie z poniższym
+schematem.
+nazwa_obiektu.nazwa_metody();
+Zadania z programowania obiektowego w dalszej części tej książki
+rozwiążemy, korzystając z następującego szablonu:
+package zadanie.......;
+class pole_prostokata
+{
+// deklaracja zmiennych
+public void czytaj_dane() // deklaracja i definicja metody czytaj_dane()
+{
+....................
+}
+public void przetworz_dane() // deklaracja i definicja metody przetworz_dane()
+{
+....................
+}
+public void wyswietl_wynik() // deklaracja i definicja metody wyswietl_wynik()
+{
+....................
+}
+}
+public class Main
+{
+public static void main(String[] args)
+{
+pole_prostokata pole = new pole_prostokata();
+// deklaracja zmiennej, utworzenie obiektu i przypisanie go do zmiennej
+pole.czytaj_dane(); // wywołanie metody czytaj_dane()
+pole.przetworz_dane(); // wywołanie metody zapisz_dane_do_pliku()
+pole.wyswietl_wynik(); // wywołanie metody czytaj_dane_z_pliku()
+}
+}
+Metoda czytaj_dane() zajmuje się tylko czytaniem danych. Za ich
+przetworzenie odpowiedzialna jest metoda przetworz_dane(). Ostatnia
+z metod, wyswietl_wynik(), wyświetla na ekranie monitora przetworzone
+dane (wyniki). Metody mogą być z parametrem lub bezparametrowe
+w zależności od upodobań programisty.
+Powyższy schemat zilustrujemy przykładem znanego nam już programu,
+który oblicza pole prostokąta.
